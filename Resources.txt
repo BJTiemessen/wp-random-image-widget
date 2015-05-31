@@ -1,0 +1,5 @@
+https://www.mojowill.com/developer/using-the-new-wordpress-3-5-media-manager-in-your-plugin-or-theme/
+http://mikejolley.com/2012/12/using-the-new-wordpress-3-5-media-uploader-in-plugins/
+https://github.com/thomasgriffin/New-Media-Image-Uploader
+http://shibashake.com/wordpress-theme/how-to-add-the-wordpress-3-5-media-manager-interface-part-2
+http://code.tutsplus.com/tutorials/getting-started-with-the-wordpress-media-uploader--cms-22011
