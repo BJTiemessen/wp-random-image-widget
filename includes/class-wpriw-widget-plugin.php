@@ -1,6 +1,6 @@
 <?php
 /******************************************************************************
-* The widget class
+* The main plugin class for loading the widget and attaching hooks
 ******************************************************************************/
 
 /**
@@ -9,34 +9,33 @@
  * @package default
  * @author 
  **/
-class WP_Random_Image_Widget extends WP_Widget
+class WP_Random_Image_Widget_Plugin
 {
-	public function __Construct()
+	/******************************************************************************
+	* Set up the widget hooks
+	******************************************************************************/
+	public function load()
 	{
-
+		add_action('widgets_init', array($this, 'register_widget'));
+		add_action('init', array($this, 'load_assets'));
 	}
 
 	/******************************************************************************
-	* Display the widget
+	* Register the widget
 	******************************************************************************/
-	public function widget($args, $instance)
+	public function register_widget()
 	{
-
+		register_widget('WP_Random_Image_Widget');
 	}
 
 	/******************************************************************************
-	* Display the form to edit the widget settings
+	* Register scripts and styles
 	******************************************************************************/
-	public function form($instance)
+	public function load_assets()
 	{
-
-	}
-
-	/******************************************************************************
-	* Save and sanitize widget settings
-	******************************************************************************/
-	public function update($new_instance, $old_instance)
-	{
-
+		//load the css file
+		wp_register_style('wp-random-image-widget-admin', plugin_dir_path(__FILE__).'css/wp-random-image-widget.css');
+		//load the javascript file
+		wp_register_script('wp-random-image-widget-admin', plugin_dir_path(__FILE__).'js/wp-random-image-widget.js');
 	}
 } // END class 

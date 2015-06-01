@@ -11,6 +11,9 @@
 * Text Domain: wp-random-image-widget
 ******************************************************************************/
 
+//Don't run this directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 //Define the plugin directory path
 if(!defined('WPRIW_DIR'))
 {
@@ -18,7 +21,8 @@ if(!defined('WPRIW_DIR'))
 }
 
 //Include functions and libraries
-require_once(WPRIW_DIR, 'includes/class-wpriw-widget.php');
+require_once(WPRIW_DIR.'includes/class-wpriw-widget.php');
+require_once(WPRIW_DIR.'includes/class-wpriw-widget-plugin.php');
 
-$wpriw = new WP_Random_Image_Widget();
-add_action('plugins_loaded', array($wpriw, 'init'));
+$wpriw = new WP_Random_Image_Widget_Plugin();
+add_action('plugins_loaded', array($wpriw, 'load'));
